@@ -2,35 +2,145 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HeadCalc — a primeira calculadora SaaS do mercado. Faça contas de verdade, agora com planos.">
+    <meta name="theme-color" content="#7c5cff">
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HeadCalc — Calculadora Premium">
+    <meta property="og:description" content="A calculadora que escala com você. Some grátis, veja o resultado a partir do plano Pro.">
+    <meta property="og:image" content="img/cabeca.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/jpeg" href="img/cabeca.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Cabeça Girando </title>
-   
+    <title>HeadCalc — Calculadora Premium</title>
 </head>
 
 <body>
 
+    <header class="app-header">
+        <div class="brand">
+            <span class="logo-dot"></span>
+            <span class="brand-name">HeadCalc</span>
+            <span class="badge-pro">PRO</span>
+        </div>
+        <nav class="top-nav">
+            <a href="#" class="nav-link">Recursos</a>
+            <a href="#" class="nav-link">Preços</a>
+            <a href="./readme.html" class="nav-link">Sobre</a>
+        </nav>
+    </header>
 
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <a href="./readme.html">
-            <img id="img" src="img/cabeca.jpg">
-        </a>
+    <main class="app-main">
+        <section class="hero-copy">
+            <h1>A calculadora que <span class="grad">escala com você</span>.</h1>
+            <p class="lead">Some, subtraia, multiplique e divida com a confiança de uma stack cloud-native.
+                Comece grátis — resultados a partir do plano Pro.</p>
+            <ul class="hero-perks">
+                <li>Sintaxe familiar de calculadora</li>
+                <li>Suporte 24/7 (na próxima release)</li>
+                <li>SLA de 99,9% (contando finais de semana)</li>
+            </ul>
+        </section>
 
+        <section class="calc-wrapper">
+            <div class="calc" role="application" aria-label="Calculadora">
+                <div class="calc-display" id="display" aria-live="polite">0</div>
+                <div class="calc-subdisplay" id="subdisplay">&nbsp;</div>
+                <div class="calc-grid">
+                    <button class="btn btn-fn" data-action="clear">C</button>
+                    <button class="btn btn-fn" data-action="sign">±</button>
+                    <button class="btn btn-fn" data-action="percent">%</button>
+                    <button class="btn btn-op" data-op="/">÷</button>
+
+                    <button class="btn btn-num" data-num="7">7</button>
+                    <button class="btn btn-num" data-num="8">8</button>
+                    <button class="btn btn-num" data-num="9">9</button>
+                    <button class="btn btn-op" data-op="*">×</button>
+
+                    <button class="btn btn-num" data-num="4">4</button>
+                    <button class="btn btn-num" data-num="5">5</button>
+                    <button class="btn btn-num" data-num="6">6</button>
+                    <button class="btn btn-op" data-op="-">−</button>
+
+                    <button class="btn btn-num" data-num="1">1</button>
+                    <button class="btn btn-num" data-num="2">2</button>
+                    <button class="btn btn-num" data-num="3">3</button>
+                    <button class="btn btn-op" data-op="+">+</button>
+
+                    <button class="btn btn-num btn-zero" data-num="0">0</button>
+                    <button class="btn btn-num" data-num=".">,</button>
+                    <button class="btn btn-eq" id="btn-equals">=</button>
+                </div>
+                <p class="calc-hint">Resultado disponível a partir do plano <strong>Pro</strong>.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-backdrop" id="modal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modal-close" aria-label="Fechar">×</button>
+
+            <div class="modal-header">
+                <img id="img" src="img/cabeca.jpg" alt="" class="modal-avatar">
+                <h2 id="modal-title">Ops! Você atingiu seu limite de resultados.</h2>
+                <p class="modal-sub">Continue calculando com um plano que combina com você.</p>
+            </div>
+
+            <div class="plans">
+                <article class="plan">
+                    <h3>Free</h3>
+                    <p class="price"><span>R$</span>0<small>/mês</small></p>
+                    <ul>
+                        <li>Digitar números</li>
+                        <li>Ver os botões</li>
+                        <li class="off">Ver o resultado</li>
+                        <li class="off">Operações complexas (2+2)</li>
+                    </ul>
+                    <button class="plan-cta secondary" data-plan="free">Plano atual</button>
+                </article>
+
+                <article class="plan featured">
+                    <div class="ribbon">Mais popular</div>
+                    <h3>Pro</h3>
+                    <p class="price"><span>R$</span>29<small>,90/mês</small></p>
+                    <ul>
+                        <li>Tudo do Free</li>
+                        <li>Ver o resultado (1x/dia)</li>
+                        <li>Soma e subtração ilimitadas</li>
+                        <li class="off">Multiplicação e divisão</li>
+                    </ul>
+                    <button class="plan-cta" data-plan="pro">Assinar Pro</button>
+                </article>
+
+                <article class="plan">
+                    <h3>Enterprise</h3>
+                    <p class="price"><span>R$</span>499<small>,00/mês</small></p>
+                    <ul>
+                        <li>Tudo do Pro</li>
+                        <li>Resultados ilimitados</li>
+                        <li>Suporte via carta registrada</li>
+                        <li>Aceitamos boleto de 500 anos</li>
+                    </ul>
+                    <button class="plan-cta" data-plan="enterprise">Falar com vendas</button>
+                </article>
+            </div>
+
+            <p class="modal-foot">*Este produto é uma sátira. Sua calculadora nativa continua grátis. Provavelmente.</p>
+        </div>
     </div>
 
-
-
-
+    <footer class="app-footer">
+        <span>© <span id="year"></span> HeadCalc Inc. — Cabeça girando desde 2019.</span>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="js/main.js"></script>
-
 
 </body>
 
