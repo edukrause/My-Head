@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 — HeadCalc</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/jpeg" href="img/cabeca.jpg">
+    <style>
+        .err-wrap {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 24px;
+            text-align: center;
+        }
+        .err-code {
+            font-size: clamp(80px, 15vw, 160px);
+            font-weight: 800;
+            line-height: 1;
+            margin: 0;
+        }
+        .err-msg {
+            font-size: 20px;
+            color: var(--text-dim);
+            margin: 16px 0 32px;
+            max-width: 480px;
+        }
+        .err-cta {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 28px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .err-cta:hover { filter: brightness(1.1); color: white; }
+        .err-head {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 24px;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 30px rgba(124, 92, 255, 0.5);
+            animation: spin 6s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="brand">
+            <span class="logo-dot"></span>
+            <span class="brand-name">HeadCalc</span>
+            <span class="badge-pro">PRO</span>
+        </div>
+    </header>
+
+    <main class="err-wrap">
+        <img class="err-head" src="img/cabeca.jpg" alt="">
+        <p class="err-code grad">404</p>
+        <p class="err-msg">Esta página não existe — ou existe, mas está atrás do plano Enterprise.</p>
+        <a href="./" class="err-cta">Voltar para a home</a>
+    </main>
+
+    <footer class="app-footer">
+        <span>© HeadCalc Inc. — Perdido? A gente também.</span>
+    </footer>
+</body>
+
+</html>
